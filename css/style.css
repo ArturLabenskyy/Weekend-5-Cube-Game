@@ -1,0 +1,61 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.player-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 40%;
+    border: 2px black solid;
+    background-color: #D6A8BB;
+}
+
+.game-process-box {
+    height: 100%;
+    width: 10%;
+    /* background-color: #892564; */
+    border: 2px black solid;
+}
+
+.player {
+    height: 25%;
+    border: 1px black solid;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.game-process-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-box {
+    height: 15%;
+    border: 1px black solid;
+}
+
+.cube {
+    height: 10rem;
+    width: 100%;
+    border: 1px black solid;
+
+}
