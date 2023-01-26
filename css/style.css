@@ -17,7 +17,6 @@ body {
 .game-process-box {
     height: 100%;
     width: 10%;
-    /* background-color: #892564; */
     border: 2px black solid;
 }
 
@@ -96,21 +95,30 @@ h2 {
   #score-choose {
     font-size: 2rem;
     text-align: center;
-    width: 30%;
-    height: 10%;
+    width: 15rem;
+    height: 4rem;
   }
 
   #start-btn {
     margin-bottom: 1rem;
     font-size: 2rem;
     text-align: center;
-    height: 10%;
-    width: 30%;
+    height: 4rem;
+    min-width: 20rem;
   }
 
 li {
+    list-style:disc;
     font-size: 1.5rem;
-    text-align: center;
+    text-align: left;
     margin: 5px 0;
+}
+
+.modal-bot-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    width: 100%;
 }
 

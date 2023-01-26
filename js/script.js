@@ -108,14 +108,20 @@ startBtn.addEventListener(`click`, function (e) {
     resetGame();
     e.preventDefault();
     winScore = scoreLimit.value;
-    modal.style.display = `none`;
+    if (winScore > 0) {
+        modal.style.display = `none`;
+    } else {
+        alert(`Choose a score > 0`);
+    }
 });
 
 newGame.addEventListener(`click`, function (e) {
+    resetGame();
     modal.style.display = `block`;
 });
 
 function resetGame() {
+    scoreLimit.value = 12;
     player1.score = 0;
     player2.score = 0;
     player1.currentScore = 0;
