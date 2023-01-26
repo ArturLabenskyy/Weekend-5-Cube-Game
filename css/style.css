@@ -57,5 +57,12 @@ h2 {
     height: 10rem;
     width: 100%;
     border: 1px black solid;
+}
 
+.cube1 {
+    background: url(../assets/images/dice1.png) no-repeat center center/cover;
+}
+
+.cube2 {
+    background: url(../assets/images/dice6.png) no-repeat center center/cover;
 }
