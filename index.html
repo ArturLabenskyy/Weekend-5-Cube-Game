@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="css/style.css">
     <title>The Cube Game</title>
 </head>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h1>RULES:</h1>
+        <ul>
+            <li>The game has 2 players, playing in rounds.</li>
+            <li>In each turn, a player rolls 2 dice as many times as he wishes.</li>
+            <li>Each result will get added to his round's score.</li>
+            <li>But if the player rolls a double six all his round's score gets lost.</li>
+            <li>After that, it's the next player's turn.</li>
+            <li>A player can choose to 'Hold', which means that his round's score gets added to his global score.</li>
+            <li>After that, it's the next player's turn.</li>
+            <li>The first player to reach 100 points wins.</li>
+        </ul>
+        <input type="number" name="" id="score-choose" value="0"> <br>
+        <button id="start-btn">start the game!!!</button>
+    </div>
+</div>
 <body>
 
     <div class="player1 player-box">
@@ -43,5 +60,6 @@
     </div>
 
 </body>
+
 <script src="js/script.js"></script>
 </html>

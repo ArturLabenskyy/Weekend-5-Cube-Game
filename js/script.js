@@ -2,10 +2,15 @@ const playerOneScore = document.querySelector(`.player1-score`);
 const playerTwoScore = document.querySelector(`.player2-score`);
 const playerOneCurrent = document.querySelector(`.current-score1`);
 const playerTwoCurrent = document.querySelector(`.current-score2`);
+const modal = document.querySelector(`#myModal`);
+const scoreLimit = document.querySelector(`#score-choose`);
+const startBtn = document.querySelector(`#start-btn`);
 const cube1 = document.querySelector(`.cube1`);
 const cube2 = document.querySelector(`.cube2`);
 const rollDice = document.querySelector(`.roll-dice`);
 const hold = document.querySelector(`.hold`);
+const newGame = document.querySelector(`.new-game`);
+
 let whoPlay = 1;
 let player1 = {
     score: 0,
@@ -15,8 +20,7 @@ let player2 = {
     score: 0,
     currentScore: 0,
 };
-let inGame = true;
-let winScore = 100;
+let winScore;
 
 rollDice.addEventListener(`click`, function (e) {
     const drop1 = Math.floor(Math.random() * 6 + 1);
@@ -71,7 +75,6 @@ rollDice.addEventListener(`click`, function (e) {
         playerTwoCurrent.textContent = `${player2.currentScore}`;
     }
 });
-
 hold.addEventListener(`click`, function (e) {
     if (whoPlay === 1) {
         player1.score += player1.currentScore;
@@ -100,3 +103,25 @@ hold.addEventListener(`click`, function (e) {
     }
     whoPlay = whoPlay === 1 ? 2 : 1;
 });
+
+startBtn.addEventListener(`click`, function (e) {
+    resetGame();
+    e.preventDefault();
+    winScore = scoreLimit.value;
+    modal.style.display = `none`;
+});
+
+newGame.addEventListener(`click`, function (e) {
+    modal.style.display = `block`;
+});
+
+function resetGame() {
+    player1.score = 0;
+    player2.score = 0;
+    player1.currentScore = 0;
+    player2.currentScore = 0;
+    playerOneScore.textContent = `0`;
+    playerOneCurrent.textContent = `0`;
+    playerTwoScore.textContent = `0`;
+    playerTwoCurrent.textContent = `0`;
+}
