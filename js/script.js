@@ -41,11 +41,11 @@ hold.addEventListener(`click`, function (e) {
 startBtn.addEventListener(`click`, function (e) {
     e.preventDefault();
     rollDice.disabled = false;
-    winScore = scoreLimit.value;
+    winScore = parseInt(scoreLimit.value);
     if (winScore >= 12) {
         modal.style.display = `none`;
-        document.querySelectorAll(`.player-box`).style.display = `block`;
-        document.querySelectorAll(`.game-process-box`).style.display = `block`;
+        // document.querySelectorAll(`.player-box`).style.display = `block`;
+        // document.querySelectorAll(`.game-process-box`).style.display = `block`;
     } else {
         alert(`Choose a score at least 12`);
     }
@@ -66,7 +66,7 @@ function resetGame() {
     playerOneCurrent.textContent = `0`;
     playerTwoScore.textContent = `0`;
     playerTwoCurrent.textContent = `0`;
-    document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
+    document.querySelector(`.player1`).style.backgroundColor = `#8cc0ed`;
     document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
     document.querySelector(`.winner-check`).disabled = true;
     rollDice.disabled = true;

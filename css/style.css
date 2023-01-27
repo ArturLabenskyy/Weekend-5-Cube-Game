@@ -57,6 +57,19 @@ body {
 .player {
     height: 30%;
     width: 50%;
+    border: 2px black solid;
+    border-radius: 7px;
+}
+
+.current-score {
+    border: 2px black solid;
+    width: 50%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
 }
 
 h1 {
