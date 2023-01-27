@@ -75,16 +75,6 @@ h2 {
     text-align: center;
 }
 
-
-
-/* .cube1 {
-    background: url(../assets/images/dice1.png) no-repeat center center/cover;
-}
-
-.cube2 {
-    background: url(../assets/images/dice6.png) no-repeat center center/cover;
-} */
-
 .hidden1 {
     display: none;
 }
@@ -139,18 +129,27 @@ h2 {
 
 li {
     list-style:disc;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: left;
     margin: 5px 0;
+    padding: .5rem 0;
+}
+
+.modal-top-content {
+    margin: 0 3rem;
 }
 
 .modal-bot-content {
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 30%;
     width: 100%;
 }
+
+
 
 /* Smartphones */
 @media only screen and (max-width: 500px) {
@@ -233,6 +232,8 @@ li {
 
 }
 
+
+/* ---------Tablets------------ */
 @media(min-width: 501px) and (max-width: 1024px) {
     .modal-content {
         justify-content: center;
