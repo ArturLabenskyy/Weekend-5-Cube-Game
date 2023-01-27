@@ -20,13 +20,22 @@ body {
 }
 
 .game-process-box {
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: space-around;
+    height: 70%;
     width: 10%;
-    border: 2px black solid;
+    /* border: 2px black solid; */
     border-radius: 1rem;
+}
+
+.btn-box {
+    text-align: center;
+    font-size: 2vh;
+    height: 7vh;
+    border: 1px black solid;
+    border-radius: 5px;
 }
 
 .player1 {
@@ -38,52 +47,40 @@ body {
 }
 
 .player {
-    height: 25%;
+    height: 30%;
     width: 50%;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
 
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-align: center;
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: 3rem;
     text-align: center;
 }
-
-
-.btn-box {
-    text-align: center;
-    font-size: 2vh;
-    height: 5%;
-    border: 1px black solid;
-    border-radius: 5px;
-}
-
-
 
 .cube {
-    height: 10rem;
-    width: 100%;
+    height: 10vh;
+    width: 10vw;
     border: 1px black solid;
 }
 
-.cube1 {
+/* .cube1 {
     background: url(../assets/images/dice1.png) no-repeat center center/cover;
 }
 
 .cube2 {
     background: url(../assets/images/dice6.png) no-repeat center center/cover;
-    background-size: 100% 100%;
-}
+} */
 
 .hidden1 {
     display: none;
