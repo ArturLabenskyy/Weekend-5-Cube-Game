@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>The Cube Game</title>
 </head>
-<!-- <div id="myModal" class="modal">
+<div id="myModal" class="modal">
     <div class="modal-content">
         <div class="modal-top-content">
             <h1>Game Instructions</h1>   
@@ -23,31 +23,33 @@
 
         <div class="modal-bot-content">
             <h1>Please select a target score</h1>
-            <input type="number" name="" id="score-choose" value="12" min="12"> <br>
-            <button id="start-btn">start the game!!!</button>
+            <input type="number" name="" id="score-choose" value="77" min="12"> <br>
+            <button id="start-btn" class="btn-box">start the game!!!</button>
         </div>
 
     </div>
-</div> -->
+</div>
 <body>
     <div class="player1 player-box">
         <div class="player 1">
             <h1>PLAYER 1</h1>
             <h1 class="player1-score">0</h1>
         </div>
+        <h1 class="hidden1"></h1>
         <div class="current-score">
-            <p>CURRENT</p>
+            <h1 class="hidden1"></h1>
+            <p class="current2">CURRENT</p>
             <h2 class="current-score1">0</h2>
         </div>
-        div.
     </div>
 
     <div class="game-process-box">
-        <button class="new-game btn-box">NEW GAME</button>
+        <button class="new-game btn-box">🔃 NEW GAME</button>
         <div class="cube1 cube"></div>
         <div class="cube2 cube"></div>
-        <button class="roll-dice btn-box">Roll Dice</button>
-        <button class="hold btn-box">HOLD</button>
+        <button disabled class="roll-dice btn-box">🎲 Roll Dice</button>
+        <button disabled class="hold btn-box">📥 HOLD</button>
+        <button disabled class="winner-check btn-box">🔎 Check who is the winner</button>
     </div>
 
     <div class="player2 player-box">
@@ -55,8 +57,9 @@
             <h1>PLAYER 2</h1>
             <h1 class="player2-score">0</h1>
         </div>
+        <h1 class="hidden2"></h1>
         <div class="current-score">
-            <p>CURRENT</p>
+            <p class="currnet2">CURRENT</p>
             <h2 class="current-score2">0</h2>
         </div>
     </div>

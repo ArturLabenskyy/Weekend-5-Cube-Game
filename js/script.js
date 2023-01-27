@@ -2,7 +2,7 @@ const playerOneScore = document.querySelector(`.player1-score`);
 const playerTwoScore = document.querySelector(`.player2-score`);
 const playerOneCurrent = document.querySelector(`.current-score1`);
 const playerTwoCurrent = document.querySelector(`.current-score2`);
-const modal = document.querySelector(`#myModal`);
+const modal = document.querySelector(`.modal`);
 const scoreLimit = document.querySelector(`#score-choose`);
 const startBtn = document.querySelector(`#start-btn`);
 const cube1 = document.querySelector(`.cube1`);
@@ -10,29 +10,37 @@ const cube2 = document.querySelector(`.cube2`);
 const rollDice = document.querySelector(`.roll-dice`);
 const hold = document.querySelector(`.hold`);
 const newGame = document.querySelector(`.new-game`);
+const displays = document.querySelectorAll(`.player-box`);
+const hidden1 = document.querySelector(`.hidden1`);
+const hidden2 = document.querySelector(`.hidden2`);
 
 let whoPlay = 1;
 let player1 = {
     score: 0,
     currentScore: 0,
-    drops: 0,
 };
 let player2 = {
     score: 0,
     currentScore: 0,
-    drops: 0,
 };
 let winScore;
 
 rollDice.addEventListener(`click`, function (e) {
+    if (whoPlay === 1) {
+        player1.drops = 1;
+    } else {
+        player2.drops = 1;
+    }
     rollClick(whoPlay);
 });
+
 hold.addEventListener(`click`, function (e) {
     holdClick(whoPlay);
 });
 
 startBtn.addEventListener(`click`, function (e) {
     e.preventDefault();
+    rollDice.disabled = false;
     winScore = scoreLimit.value;
     if (winScore >= 12) {
         modal.style.display = `none`;
@@ -47,7 +55,7 @@ newGame.addEventListener(`click`, function (e) {
 });
 
 function resetGame() {
-    scoreLimit.value = 12;
+    scoreLimit.value = 77;
     player1.score = 0;
     player2.score = 0;
     player1.currentScore = 0;
@@ -58,41 +66,35 @@ function resetGame() {
     playerTwoCurrent.textContent = `0`;
     document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
     document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
+    document.querySelector(`.winner-check`).disabled = true;
+    rollDice.disabled = true;
+    holdClick.disabled = true;
+    document.querySelector(`.hidden1`).style.display = `none`;
+    document.querySelector(`.hidden2`).style.display = `none`;
     whoPlay = 1;
-}
-
-function double6(player) {
-    if (player === 1) {
-    }
+    modal.style.display = `block`;
 }
 
 function holdClick(player) {
     if (player === 1) {
-        player1.score += player1.currentScore;
-        player1.currentScore = 0;
-        playerOneScore.textContent = `${player1.score}`;
-        playerOneCurrent.textContent = `0`;
-        document.querySelector(`.player2`).style.backgroundColor = `#3282B8`;
-        document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
+        changePlayer(whoPlay);
         if (player1.score === winScore) {
-            alert(`PLAYER 1 is the WINNER!!!!`);
+            winScreen(1);
+            // alert(`PLAYER 1 is the WINNER!!!!`);
         } else if (player1.score > winScore) {
-            alert(`PLAYER 2 is the WINNER`);
+            winScreen(2);
+            // alert(`PLAYER 2 is the WINNER`);
         }
     } else {
-        player2.score += player2.currentScore;
-        player2.currentScore = 0;
-        playerTwoScore.textContent = `${player2.score}`;
-        playerTwoCurrent.textContent = `0`;
-        document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
-        document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
+        changePlayer(whoPlay);
         if (player2.score === winScore) {
-            alert(`PLAYER 2 is the WINNER!!!!`);
+            winScreen(2);
+            // alert(`PLAYER 2 is the WINNER!!!!`);
         } else if (player2.score > winScore) {
-            alert(`PLAYER 1 is the WINNER`);
+            winScreen(1);
+            // alert(`PLAYER 1 is the WINNER`);
         }
     }
-    whoPlay = whoPlay === 1 ? 2 : 1;
 }
 
 function rollClick(player) {
@@ -138,13 +140,73 @@ function rollClick(player) {
             cube2.style.background = `url(../assets/images/dice6.png) no-repeat center center/cover`;
             break;
     }
-    if (player === 1) {
-        player1.drops = 1;
+    if (drop1 === 6 && drop2 === 6) {
+        if (whoPlay === 1) {
+            player1.currentScore = 0;
+            changePlayer(1);
+        } else {
+            player2.currentScore = 0;
+            changePlayer(2);
+        }
+    } else if (player === 1) {
         player1.currentScore += drop1 + drop2;
         playerOneCurrent.textContent = `${player1.currentScore}`;
+        hold.disabled = false;
     } else {
-        player2.drops = 1;
         player2.currentScore += drop1 + drop2;
         playerTwoCurrent.textContent = `${player2.currentScore}`;
+        hold.disabled = false;
+    }
+}
+
+function changePlayer(player) {
+    if (player === 1) {
+        player1.score += player1.currentScore;
+        player1.currentScore = 0;
+        playerOneScore.textContent = `${player1.score}`;
+        playerOneCurrent.textContent = `0`;
+        hold.disabled = true;
+        document.querySelector(`.winner-check`).disabled = true;
+        document.querySelector(`.player2`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
+        whoPlay = whoPlay === 1 ? 2 : 1;
+    } else {
+        player2.score += player2.currentScore;
+        player2.currentScore = 0;
+        playerTwoScore.textContent = `${player2.score}`;
+        playerTwoCurrent.textContent = `0`;
+        hold.disabled = true;
+        document.querySelector(`.winner-check`).disabled = false;
+        document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
+        whoPlay = whoPlay === 1 ? 2 : 1;
+    }
+}
+
+function winScreen(player) {
+    if (player === 1) {
+        document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
+        rollDice.disabled = true;
+        hold.disabled = true;
+        document.querySelector(`.winner-check`).disabled = true;
+        hidden1.textContent = `You are the winner`;
+        hidden2.textContent = `You lose...`;
+        hidden1.style.display = `block`;
+        hidden2.style.display = `block`;
+        hidden1.style.fontSize = `4rem`;
+        hidden2.style.fontSize = `2.5rem`;
+    } else {
+        document.querySelector(`.player2`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
+        rollDice.disabled = true;
+        hold.disabled = true;
+        document.querySelector(`.winner-check`).disabled = true;
+        hidden2.textContent = `You are the winner`;
+        hidden1.textContent = `You lose...`;
+        hidden2.style.display = `block`;
+        hidden1.style.display = `block`;
+        hidden2.style.fontSize = `4rem`;
+        hidden1.style.fontSize = `2.5rem`;
     }
 }

@@ -1,6 +1,7 @@
 
 body {
-    background-color: #B9F3FC;
+    background: rgb(185,243,252);
+    background: linear-gradient(45deg, rgba(185,243,252,1) 0%, rgba(144,199,207,1) 25%, rgba(82,156,168,1) 50%, rgba(32,139,159,1) 75%, rgba(1,94,113,1) 100%);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -11,10 +12,20 @@ body {
 .player-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     height: 70%;
     width: 40%;
-    /* border: 2px black solid; */
+    border-radius: 1rem;
+}
+
+.game-process-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 10%;
+    border: 2px black solid;
     border-radius: 1rem;
 }
 
@@ -26,15 +37,9 @@ body {
     background-color: #0F4C75;
 }
 
-.game-process-box {
-    height: 100%;
-    width: 10%;
-    border: 2px black solid;
-    border-radius: 1rem;
-}
-
 .player {
     height: 25%;
+    width: 50%;
     border: 1px black solid;
 }
 
@@ -54,11 +59,6 @@ h2 {
     text-align: center;
 }
 
-.game-process-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .btn-box {
     text-align: center;
@@ -67,6 +67,8 @@ h2 {
     border: 1px black solid;
     border-radius: 5px;
 }
+
+
 
 .cube {
     height: 10rem;
@@ -83,7 +85,16 @@ h2 {
     background-size: 100% 100%;
 }
 
+.hidden1 {
+    display: none;
+}
+
+.hidden2 {
+    display: none;
+}
+
 .modal {
+    display: block;
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -97,12 +108,15 @@ h2 {
   
   /* Modal Content/Box */
   .modal-content {
+    position: absolute;
+    left: 25vw;
+    top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 98vh;
-    width: 98vw;
+    height: 70vh;
+    width: 50vw;
     background-color: #fefefe;
     margin: 1vh 1vw;
     border: 1px solid #888;
