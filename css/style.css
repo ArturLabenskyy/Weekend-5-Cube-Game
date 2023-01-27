@@ -47,7 +47,7 @@ body {
 }
 
 .player1 {
-    background-color: #3282B8;
+    background-color: #8cc0ed;
 }
 
 .player2 {
@@ -231,5 +231,51 @@ li {
         margin: 1rem 3rem;
     }
 
+}
+
+@media(min-width: 501px) and (max-width: 1024px) {
+    .modal-content {
+        justify-content: center;
+        width: 90%;
+        height: 80%;
+        top: 10%;
+        left: 5%;
+    }
+
+    .modal-top-content {
+        margin: 1rem 3rem;
+    }
+
+    h1, p {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #start-btn {
+
+        font-size: 1.5rem;
+
+    }
+
+    body {
+        justify-content: space-between;
+    }
+
+    .player-box {
+        margin: 0 1rem;
+    }
+
+    .cube {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .btn-box {
+        height: 3rem;
+        width: 10rem;
+    }
 }
 

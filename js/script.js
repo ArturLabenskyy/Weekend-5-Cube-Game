@@ -181,7 +181,7 @@ function changePlayer(player) {
         playerOneCurrent.textContent = `0`;
         hold.disabled = true;
         document.querySelector(`.winner-check`).disabled = true;
-        document.querySelector(`.player2`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player2`).style.backgroundColor = `#8cc0ed`;
         document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
         whoPlay = whoPlay === 1 ? 2 : 1;
     } else {
@@ -191,7 +191,7 @@ function changePlayer(player) {
         playerTwoCurrent.textContent = `0`;
         hold.disabled = true;
         document.querySelector(`.winner-check`).disabled = false;
-        document.querySelector(`.player1`).style.backgroundColor = `#3282B8`;
+        document.querySelector(`.player1`).style.backgroundColor = `#8cc0ed`;
         document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
         whoPlay = whoPlay === 1 ? 2 : 1;
     }
