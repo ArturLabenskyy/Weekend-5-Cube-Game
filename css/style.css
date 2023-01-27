@@ -14,8 +14,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 70%;
-    width: 40%;
+    height: 65rem;
+    width: 50rem;
     border-radius: 1rem;
 }
 
@@ -25,8 +25,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 70%;
-    width: 10%;
+    height: 65rem;
+    width: 15rem;
     /* border: 2px black solid; */
     /* border-radius: 1rem; */
 }
@@ -35,8 +35,8 @@ body {
     background-color: #8cc0ed;
     text-align: center;
     font-size: 2vh;
-    height: 7vh;
-    width: 10vw;
+    width: 14rem;
+    height: 5rem;
     border: 2px #0F4C75 solid;
     border-radius: 5px;
 }
@@ -266,17 +266,62 @@ li {
     }
 
     .player-box {
+        height: 50rem;
+        min-width: 28rem;
         margin: 0 1rem;
     }
 
-    .cube {
-        height: 7rem;
-        width: 7rem;
+    .game-process-box {
+        height: 50rem;
     }
 
     .btn-box {
-        height: 3rem;
-        width: 10rem;
+        font-size: 1.5rem;
+    }
+
+    .cube {
+        height: 12rem;
+        width: 12rem;
+    }
+}
+    
+@media(min-width: 1025px) and (max-width: 2559px) {
+    .player-box {
+        min-width: 50rem;
     }
 }
 
+
+
+@media(min-width: 2560px) {
+    .player-box {
+        margin: 0 3rem;
+        width: 70rem;
+        height: 85rem;
+    }
+
+    .game-process-box {
+        height: 85rem;
+        width: 25rem;
+    }
+
+    .btn-box {
+        width: 25rem;
+        height: 10rem;
+    }
+
+    .cube {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }  
+    h2 {
+        font-size: 4rem;
+    }  
+    p {
+        font-size: 3rem;
+    }
+}
