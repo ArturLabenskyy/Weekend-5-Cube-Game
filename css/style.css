@@ -1,23 +1,36 @@
+
 body {
+    background-color: #B9F3FC;
     height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 
 .player-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 70%;
     width: 40%;
-    border: 2px black solid;
-    background-color: #D6A8BB;
+    /* border: 2px black solid; */
+    border-radius: 1rem;
+}
+
+.player1 {
+    background-color: #3282B8;
+}
+
+.player2 {
+    background-color: #0F4C75;
 }
 
 .game-process-box {
     height: 100%;
     width: 10%;
     border: 2px black solid;
+    border-radius: 1rem;
 }
 
 .player {
@@ -48,8 +61,11 @@ h2 {
 }
 
 .btn-box {
-    height: 15%;
+    text-align: center;
+    font-size: 2vh;
+    height: 5%;
     border: 1px black solid;
+    border-radius: 5px;
 }
 
 .cube {
