@@ -66,12 +66,10 @@ rollDice.addEventListener(`click`, function (e) {
             break;
     }
     if (whoPlay === 1) {
-        player1.currentScore += drop1;
-        player1.currentScore += drop2;
+        player1.currentScore += drop1 + drop2;
         playerOneCurrent.textContent = `${player1.currentScore}`;
     } else {
-        player2.currentScore += drop1;
-        player2.currentScore += drop2;
+        player2.currentScore += drop1 + drop2;
         playerTwoCurrent.textContent = `${player2.currentScore}`;
     }
 });
@@ -105,13 +103,12 @@ hold.addEventListener(`click`, function (e) {
 });
 
 startBtn.addEventListener(`click`, function (e) {
-    resetGame();
     e.preventDefault();
     winScore = scoreLimit.value;
-    if (winScore > 0) {
+    if (winScore >= 12) {
         modal.style.display = `none`;
     } else {
-        alert(`Choose a score > 0`);
+        alert(`Choose a score at least 12`);
     }
 });
 
@@ -130,4 +127,5 @@ function resetGame() {
     playerOneCurrent.textContent = `0`;
     playerTwoScore.textContent = `0`;
     playerTwoCurrent.textContent = `0`;
+    whoPlay = 1;
 }
