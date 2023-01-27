@@ -206,8 +206,8 @@ function winScreen(player) {
         hidden2.textContent = `You lose...`;
         hidden1.style.display = `block`;
         hidden2.style.display = `block`;
-        hidden1.style.fontSize = `4rem`;
-        hidden2.style.fontSize = `2.5rem`;
+        hidden1.style.fontSize = `3.2rem`;
+        hidden2.style.fontSize = `2.1rem`;
     } else {
         document.querySelector(`.player2`).style.backgroundColor = `#3282B8`;
         document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
@@ -218,7 +218,7 @@ function winScreen(player) {
         hidden1.textContent = `You lose...`;
         hidden2.style.display = `block`;
         hidden1.style.display = `block`;
-        hidden2.style.fontSize = `4rem`;
-        hidden1.style.fontSize = `2.5rem`;
+        hidden2.style.fontSize = `3rem`;
+        hidden1.style.fontSize = `2.1rem`;
     }
 }

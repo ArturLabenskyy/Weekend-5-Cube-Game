@@ -152,3 +152,73 @@ li {
     width: 100%;
 }
 
+/* Smartphones */
+@media only screen and (max-width: 500px) {
+
+    body {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .game-process-box {
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        height: 30%;
+        width: 100%;
+        column-gap: .5rem;
+        grid-template-areas: 
+                    "cube1 cube1 cube2 cube2"
+                    "new roll hold check"
+    }
+
+    .player-box {
+        justify-content: space-around;
+        margin: 1rem 0;
+        width: 80%;
+        height: 30%;
+    }
+
+    .btn-box {
+        height: 100%;
+        font-size: 1.7rem;
+    }
+
+    .cube1 {
+        grid-area: cube1;
+    }
+
+    .cube2 {
+        grid-area: cube2;
+    }
+
+    .roll-dice {
+        width: 100%;
+        grid-area: roll;
+    }
+
+    .hold {
+        width: 100%;
+        grid-area: hold;
+    }
+
+    .winner-check {
+        width: 100%;
+        grid-area: check
+    }
+
+    .new-game {
+        width: 100%;
+        grid-area: new;
+    }
+
+    h1, p{
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+}
+
