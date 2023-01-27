@@ -267,7 +267,7 @@ li {
 
     .player-box {
         height: 50rem;
-        min-width: 28rem;
+        width: 28rem;
         margin: 0 1rem;
     }
 
@@ -288,6 +288,10 @@ li {
 @media(min-width: 1025px) and (max-width: 2559px) {
     .player-box {
         min-width: 50rem;
+    }
+
+    .btn-box {
+        width: 16rem;
     }
 }
 
