@@ -220,5 +220,16 @@ li {
         font-size: 1.8rem;
     }
 
+    .modal-content {
+        width: 90%;
+        height: 80%;
+        top: 10%;
+        left: 5%;
+    }
+
+    .modal-top-content {
+        margin: 1rem 3rem;
+    }
+
 }
 
