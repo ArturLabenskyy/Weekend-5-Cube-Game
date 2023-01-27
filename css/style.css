@@ -24,18 +24,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     height: 70%;
     width: 10%;
     /* border: 2px black solid; */
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 
 .btn-box {
+    background-color: #8cc0ed;
     text-align: center;
     font-size: 2vh;
     height: 7vh;
-    border: 1px black solid;
+    width: 10vw;
+    border: 2px #0F4C75 solid;
     border-radius: 5px;
+}
+
+.cube {
+    height: 15rem;
+    width: 15rem;
 }
 
 .player1 {
@@ -49,7 +57,6 @@ body {
 .player {
     height: 30%;
     width: 50%;
-    /* border: 1px black solid; */
 }
 
 h1 {
@@ -68,11 +75,7 @@ h2 {
     text-align: center;
 }
 
-.cube {
-    height: 10vh;
-    width: 10vw;
-    border: 1px black solid;
-}
+
 
 /* .cube1 {
     background: url(../assets/images/dice1.png) no-repeat center center/cover;
