@@ -156,7 +156,6 @@ li {
 @media only screen and (max-width: 500px) {
 
     body {
-        height: 100%;
         flex-direction: column;
         justify-content: space-between;
     }

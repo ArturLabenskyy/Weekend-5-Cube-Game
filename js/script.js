@@ -44,6 +44,8 @@ startBtn.addEventListener(`click`, function (e) {
     winScore = scoreLimit.value;
     if (winScore >= 12) {
         modal.style.display = `none`;
+        document.querySelectorAll(`.player-box`).style.display = `block`;
+        document.querySelectorAll(`.game-process-box`).style.display = `block`;
     } else {
         alert(`Choose a score at least 12`);
     }
