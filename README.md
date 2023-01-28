@@ -13,3 +13,8 @@ A player can choose to ‘Hold’, which means that his round’s score gets add
 After that, it's the next player's turn.
 The first player to reach 100 points wins.
 ***
+The game wrote on:
+1. **HTML**
+2. **CSS**
+3. **JavaScript**
+***
