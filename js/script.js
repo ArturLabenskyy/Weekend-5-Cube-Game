@@ -15,6 +15,10 @@ const hidden1 = document.querySelector(`.hidden1`);
 const hidden2 = document.querySelector(`.hidden2`);
 const audio = new Audio("../assets/audio/dice.mp3");
 const double6 = document.querySelector(`.double-6`);
+const topBorder1 = document.querySelector(`.p1`);
+const topBorder2 = document.querySelector(`.p2`);
+const botBorder1 = document.querySelector(`#current1`);
+const botBorder2 = document.querySelector(`#current2`);
 
 let whoPlay = 1;
 let player1 = {
@@ -28,11 +32,6 @@ let player2 = {
 let winScore;
 
 rollDice.addEventListener(`click`, function (e) {
-    if (whoPlay === 1) {
-        player1.drops = 1;
-    } else {
-        player2.drops = 1;
-    }
     rollClick(whoPlay);
 });
 
@@ -44,6 +43,8 @@ startBtn.addEventListener(`click`, function (e) {
     e.preventDefault();
     rollDice.disabled = false;
     winScore = Math.floor(parseInt(scoreLimit.value));
+    topBorder1.classList.add("border-animation");
+    botBorder1.classList.add("border-animation");
     if (winScore >= 12) {
         modal.style.display = `none`;
     } else {
@@ -76,6 +77,10 @@ function resetGame() {
     modal.style.display = `block`;
     hidden1.classList.remove(`win-animation`);
     hidden2.classList.remove(`win-animation`);
+    topBorder1.classList.remove(`border-animation`);
+    botBorder1.classList.remove(`border-animation`);
+    topBorder2.classList.remove(`border-animation`);
+    botBorder2.classList.remove(`border-animation`);
 }
 
 function holdClick(player) {
@@ -83,19 +88,15 @@ function holdClick(player) {
         changePlayer(whoPlay);
         if (player1.score === winScore) {
             winScreen(1);
-            // alert(`PLAYER 1 is the WINNER!!!!`);
         } else if (player1.score > winScore) {
             winScreen(2);
-            // alert(`PLAYER 2 is the WINNER`);
         }
     } else {
         changePlayer(whoPlay);
         if (player2.score === winScore) {
             winScreen(2);
-            // alert(`PLAYER 2 is the WINNER!!!!`);
         } else if (player2.score > winScore) {
             winScreen(1);
-            // alert(`PLAYER 1 is the WINNER`);
         }
     }
 }
@@ -160,7 +161,7 @@ function rollClick(player) {
         double6.style.display = "block";
         setTimeout(() => {
             double6.style.display = `none`;
-        }, 2000);
+        }, 1200);
         if (whoPlay === 1) {
             player1.currentScore = 0;
             changePlayer(1);
@@ -186,9 +187,12 @@ function changePlayer(player) {
         playerOneScore.textContent = `${player1.score}`;
         playerOneCurrent.textContent = `0`;
         hold.disabled = true;
-        // document.querySelector(`.winner-check`).disabled = true;
         document.querySelector(`.player2`).style.backgroundColor = `#8cc0ed`;
         document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
+        topBorder1.classList.remove(`border-animation`);
+        botBorder1.classList.remove(`border-animation`);
+        topBorder2.classList.add(`border-animation`);
+        botBorder2.classList.add(`border-animation`);
         whoPlay = whoPlay === 1 ? 2 : 1;
     } else {
         player2.score += player2.currentScore;
@@ -196,9 +200,12 @@ function changePlayer(player) {
         playerTwoScore.textContent = `${player2.score}`;
         playerTwoCurrent.textContent = `0`;
         hold.disabled = true;
-        // document.querySelector(`.winner-check`).disabled = false;
         document.querySelector(`.player1`).style.backgroundColor = `#8cc0ed`;
         document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
+        topBorder2.classList.remove(`border-animation`);
+        botBorder2.classList.remove(`border-animation`);
+        topBorder1.classList.add(`border-animation`);
+        botBorder1.classList.add(`border-animation`);
         whoPlay = whoPlay === 1 ? 2 : 1;
     }
 }

@@ -27,8 +27,6 @@ body {
     align-items: center;
     height: 65rem;
     width: 15rem;
-    /* border: 2px black solid; */
-    /* border-radius: 1rem; */
 }
 
 .btn-box {
@@ -58,13 +56,13 @@ body {
     margin-top: 2rem;
     height: 30%;
     width: 50%;
-    border: 2px black solid;
+    border: 3px solid;
     border-radius: 7px;
 }
 
 .current-score {
     margin-bottom: 2rem;
-    border: 2px black solid;
+    border: 3px solid;
     width: 50%;
     height: 25%;
     display: flex;
@@ -189,8 +187,32 @@ li {
     top: 15%;
     height: 70%;
     width: 70%;
-    /* border: 3px black solid; */
 }
+
+.border-animation {
+    animation-name: border;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:backwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes border {
+    0% {
+        border-top: red 3px solid;
+    }
+    25% {
+        border-right: red 3px solid;
+    }
+    50%{
+        border-bottom: red 3px solid;
+    }
+    100%{
+        border-left: red 3px solid;
+    }
+
+}
+
 
 
 
@@ -227,12 +249,10 @@ li {
     }
 
     .player {
-        border: none;
+        height: 33%;
     }
 
-    .current-score {
-        border: none;
-    }
+
 
     .cube1 {
         grid-area: cube1;
@@ -263,11 +283,11 @@ li {
     }
 
     h1, p{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     .modal-content {
@@ -359,6 +379,9 @@ li {
 
 /* --------------------2k + ------------------- */
 @media(min-width: 2560px) {
+    .player {
+        height: 40%;
+    }
     .player-box {
         margin: 0 3rem;
         width: 70rem;
