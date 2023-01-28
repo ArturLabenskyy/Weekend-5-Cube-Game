@@ -72,6 +72,8 @@ function resetGame() {
     document.querySelector(`.hidden2`).style.display = `none`;
     whoPlay = 1;
     modal.style.display = `block`;
+    hidden1.classList.remove(`win-animation`);
+    hidden2.classList.remove(`win-animation`);
 }
 
 function holdClick(player) {
@@ -196,6 +198,7 @@ function changePlayer(player) {
 
 function winScreen(player) {
     if (player === 1) {
+        hidden1.classList.add("win-animation");
         if (player1.score === winScore) {
             hidden1.textContent = `You are the winner`;
             hidden2.textContent = `You lose...`;
@@ -207,13 +210,12 @@ function winScreen(player) {
         document.querySelector(`.player2`).style.backgroundColor = `#0F4C75`;
         rollDice.disabled = true;
         hold.disabled = true;
-        // hidden1.textContent = `You are the winner`;
-        // hidden2.textContent = `You lose...`;
         hidden1.style.display = `block`;
         hidden2.style.display = `block`;
         hidden1.style.fontSize = `3.2rem`;
         hidden2.style.fontSize = `2.1rem`;
     } else {
+        hidden2.classList.add("win-animation");
         if (player2.score === winScore) {
             hidden2.textContent = `You are the winner`;
             hidden1.textContent = `You lose...`;
@@ -225,8 +227,6 @@ function winScreen(player) {
         document.querySelector(`.player1`).style.backgroundColor = `#0F4C75`;
         rollDice.disabled = true;
         hold.disabled = true;
-        // hidden2.textContent = `You are the winner`;
-        // hidden1.textContent = `You lose...`;
         hidden2.style.display = `block`;
         hidden1.style.display = `block`;
         hidden2.style.fontSize = `3rem`;
