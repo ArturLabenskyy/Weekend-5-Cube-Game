@@ -12,7 +12,7 @@ body {
 .player-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 65rem;
     width: 50rem;
@@ -55,6 +55,7 @@ body {
 }
 
 .player {
+    margin-top: 2rem;
     height: 30%;
     width: 50%;
     border: 2px black solid;
@@ -62,6 +63,7 @@ body {
 }
 
 .current-score {
+    margin-bottom: 2rem;
     border: 2px black solid;
     width: 50%;
     height: 25%;
@@ -181,11 +183,11 @@ li {
         column-gap: .5rem;
         grid-template-areas: 
                     "cube1 cube1 cube2 cube2"
-                    "new roll hold check"
+                    "new roll roll hold"
     }
 
     .player-box {
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 1rem 0;
         width: 80%;
         height: 30%;
@@ -194,6 +196,14 @@ li {
     .btn-box {
         height: 100%;
         font-size: 1.7rem;
+    }
+
+    .player {
+        border: none;
+    }
+
+    .current-score {
+        border: none;
     }
 
     .cube1 {
@@ -280,7 +290,7 @@ li {
 
     .player-box {
         height: 50rem;
-        width: 28rem;
+        width: 35rem;
         margin: 0 1rem;
     }
 
@@ -296,8 +306,14 @@ li {
         height: 12rem;
         width: 12rem;
     }
+
+    .current-score {
+        width: 65%
+    }
 }
     
+
+/* -----------FullHD------------ */
 @media(min-width: 1025px) and (max-width: 2559px) {
     .player-box {
         min-width: 50rem;
@@ -309,7 +325,7 @@ li {
 }
 
 
-
+/* --------------------2k + ------------------- */
 @media(min-width: 2560px) {
     .player-box {
         margin: 0 3rem;
