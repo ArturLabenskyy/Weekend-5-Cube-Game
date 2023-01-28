@@ -13,6 +13,8 @@ const newGame = document.querySelector(`.new-game`);
 const displays = document.querySelectorAll(`.player-box`);
 const hidden1 = document.querySelector(`.hidden1`);
 const hidden2 = document.querySelector(`.hidden2`);
+const audio = new Audio("../assets/audio/dice.mp3");
+const double6 = document.querySelector(`.double-6`);
 
 let whoPlay = 1;
 let player1 = {
@@ -99,6 +101,7 @@ function holdClick(player) {
 }
 
 function rollClick(player) {
+    audio.play();
     const drop1 = Math.floor(Math.random() * 6 + 1);
     const drop2 = Math.floor(Math.random() * 6 + 1);
     switch (drop1) {
@@ -154,6 +157,10 @@ function rollClick(player) {
             break;
     }
     if (drop1 === 6 && drop2 === 6) {
+        double6.style.display = "block";
+        setTimeout(() => {
+            double6.style.display = `none`;
+        }, 2000);
         if (whoPlay === 1) {
             player1.currentScore = 0;
             changePlayer(1);
