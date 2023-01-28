@@ -338,6 +338,10 @@ li {
     .current-score {
         width: 65%
     }
+
+    .player {
+        width: 70%;
+    }
 }
     
 
